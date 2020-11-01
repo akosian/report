@@ -2,6 +2,7 @@ package com.example.report.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "user")
+@Proxy(lazy = false)
 public class User {
 
     @Id

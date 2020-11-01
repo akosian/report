@@ -34,10 +34,10 @@ public class UserDaoImpl implements UserDao {
     public synchronized void removeUser(int id) {
         Session session = getSession();
         User user = session.load(User.class, id);
-        finishTransaction(session);
         if (user != null) {
-            getSession().delete(user);
+            session.delete(user);
         }
+        finishTransaction(session);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     private Session getSession() {
-        Session session = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.openSession();
         session.beginTransaction();
         return session;
     }
