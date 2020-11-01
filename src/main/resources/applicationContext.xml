@@ -1,0 +1,49 @@
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:context="http://www.springframework.org/schema/context"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--    http://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--    http://www.springframework.org/schema/context-->
+<!--    http://www.springframework.org/schema/context/spring-context.xsd">-->
+
+<!--    <context:annotation-config/>-->
+<!--    <context:component-scan base-package="com.example.report"/>-->
+
+<!--    <bean class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" id="dataSource">-->
+<!--        <property value="com.mysql.jdbc.Driver" name="driverClassName"/>-->
+<!--        <property value="jdbc:mysql://localhost:3306/report" name="url"/>-->
+<!--        <property value="root" name="username"/>-->
+<!--        <property value="admin" name="password"/>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash; Hibernate 4 SessionFactory Bean definition &ndash;&gt;-->
+<!--    <bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean" id="hibernate4AnnotatedSessionFactory">-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--        <property name="annotatedClasses">-->
+<!--            <list>-->
+<!--                <value>com.example.report.models.User</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--        <property name="hibernateProperties">-->
+<!--            <props>-->
+<!--                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>-->
+<!--                <prop key="hibernate.show_sql">true</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash;UserDao and UserService beans&ndash;&gt;-->
+<!--    <bean class="com.example.report.dao.UserDaoImpl" id="userDao">-->
+<!--        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>-->
+<!--    </bean>-->
+
+<!--    <bean class="com.example.report.service.UserServiceImpl" id="userService">-->
+<!--        <property name="userDao" ref="userDao"/>-->
+<!--    </bean>-->
+<!--    <context:component-scan base-package="com.example.report"/>-->
+<!--    <tx:annotation-driven transaction-manager="transactionManager"/>-->
+<!--    -->
+<!--    <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" id="transactionManager">-->
+<!--        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>-->
+<!--    </bean>-->
+<!--</beans>-->
